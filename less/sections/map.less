@@ -1,0 +1,141 @@
+.map {
+    &__wrap {
+        background-color: #243970;
+        display: flex;
+        position: relative;
+        padding: 58px;
+    }
+
+    .list {
+        width: 100%;
+        max-width: 372px;
+
+        &__item {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: @white;
+            background-color: transparent;
+            transition: 0.3s;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 7px 13px;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:not(:last-of-type) {
+                margin-bottom: 5px;
+            }
+
+            &:after {
+                content: attr(data-numb);
+                position: absolute;
+                right: 16px;
+                top: 6px;
+                font-weight: 800;
+                font-size: 14px;
+            }
+
+            &:hover,
+            &.hover {
+                background-color: #2e97df;
+                border-color: #2e97df;
+            }
+        }
+    }
+
+    .image {
+        width: calc(100% - 372px);
+        padding-left: 58px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            
+            circle {
+                fill: #1274B9;
+                transition: 0.3s;
+
+                &[data-city] {
+                    fill: #30afcf;
+                    cursor: pointer;
+                }
+
+                &.hover {
+                    fill: @white;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .map {
+        &__wrap {
+            .list {
+                max-width: 250px;
+            }
+
+            .image {
+                width: calc(100% - 250px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .map {
+        &__wrap {
+            padding: 24px;
+
+            .list {
+                max-width: 250px;
+            }
+
+            .image {
+                width: calc(100% - 250px);
+                padding-left: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .map {
+        &__wrap {
+            padding: 15px;
+            display: block;
+            position: relative;
+
+            .list {
+                max-width: 250px;
+                position: relative;
+                z-index: 3;
+
+                &__item {
+                    font-size: 12px;
+
+                    &:after {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .image {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                padding: 15px;
+                opacity: 0.5;
+
+                svg {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid @lightBlue;
+    margin-top: 32px;
+    padding: 30px 0 0;
+
+    &__numb {
+        .item {
+            font-size: 15px;
+            font-weight: 700;
+            color: #bdc3c6;
+            margin-right: 17px;
+
+            &.current {
+                color: @lightBlue;
+            }
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+
+
+        .item {
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            border: 1px solid #dde5e9;
+            background-image: url('../img/icons/lightblue-arrow.png');
+            background-size: 8px 5px;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.prev {
+                transform: rotate(90deg);
+            }
+            
+            &.next {
+                transform: rotate(-90deg);
+                margin-left: 5px;
+            }
+        }
+    }
+}

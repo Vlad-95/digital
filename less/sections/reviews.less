@@ -1,0 +1,274 @@
+.reviews {
+    margin-top: 29px;
+    
+    &__wrap {
+        position: relative;
+        padding-top: 26px;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #e9ebf0;
+            content: "";
+        }
+    }
+
+    .slider {
+        &__item {
+            &-wrap {
+                display: flex;
+            }
+
+            .content {
+                background-color: #f0eeed;
+                width: calc(100% - 371px);
+                padding: 54px 50px 43px;
+            }
+
+            .title {
+                margin: 0;
+                color: @darkBlue;
+                font-size: 25px;
+                font-weight: 600;
+            }
+
+            .wysiwyg {
+                p {
+                    color: @darkBlue;
+                    font-size: 17px;
+                    line-height: 1.8;
+                }
+            }
+
+            .footer {
+                display: flex;
+                padding: 0;
+                margin: 32px 0 0;
+
+                &__item {
+                    position: relative;
+                    font-size: 15px;
+                    color: @darkBlue;
+                    font-weight: 600;
+                    padding-right: 32px;
+                    margin-right: 15px;
+                    cursor: pointer;
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        fill: @lightBlue
+                    }
+                }
+            }
+
+            .logo {
+                background-color: #f6f6f6;
+                width: 371px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            
+            
+        }
+
+        .slick-dots {
+            bottom: 43px;
+            width: calc(100% - 371px);
+            text-align: right;
+            padding-right: 65px;
+            pointer-events: none;
+
+            li {
+                width: 7px;
+                height: 7px;
+                margin: 0 4px;
+                pointer-events: all;
+
+                button {
+                    width: 7px;
+                    height: 7px;
+                    padding: 0;
+                    background-color: #8fc2e6;
+                    border-radius: 100px;
+
+                    &:before {
+                        font-family: none;
+                        color: transparent;
+                        opacity: 1;
+                        top: 0;
+                        left: -3px;
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 13px;
+                        height: 13px;
+                        border: 1px solid #8fc2e6;
+                        border-radius: 100px;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: @lightBlue;
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .reviews {
+        .slider {
+            &__item {
+                .content {
+                    padding: 40px;
+                }
+
+                .title {
+                    font-size: 20px;
+                }
+
+                .wysiwyg {
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .slick-dots {
+                padding-right: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .reviews {
+        .slider {
+            &__item {
+                .content {
+                    width: calc(100% - 320px);
+                }
+
+                .wysiwyg {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                .footer {
+                    &__item {
+                        font-size: 12px;
+                        padding-right: 24px;
+
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+
+                .logo {
+                    width: 320px;
+                }
+            }
+
+            .slick-dots {
+                width: calc(100% - 320px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reviews {
+        .slider {
+            &__item {
+                .content {
+                    padding: 15px;
+                    width: calc(100% - 200px);
+                }
+
+                .footer {
+                    &__item {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .logo {
+                    width: 200px;
+                    padding: 15px;
+                }
+            }
+
+            .slick-dots {
+                bottom: 17px;
+                padding-right: 15px;
+                width: calc(100% - 200px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .reviews {
+        .slider {
+            &__item {
+                &-wrap {
+                    position: relative;
+                    background-color: #f0eeed;
+                }
+
+                .content {
+                    width: 100%;
+                    background-color: transparent;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .footer {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    &__item {
+                        &:not(:last-of-type) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                .logo {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    z-index: 1;
+                    opacity: 0.2;
+                }
+            }
+
+            .slick-dots {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,339 @@
+.intro {
+    margin-bottom: 30px;
+
+    &__wrap {
+        position: relative;
+    }
+
+    .chat-bots {
+        position: absolute;
+        right: 20px;
+        top: 19px;
+        display: flex;
+        z-index: 2;
+
+        &__item {
+            margin-left: 10px;
+        }
+    }
+
+    .slider {
+        &__item {
+            position: relative;
+            height: 390px;
+
+            .image {
+                height: 100%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 50%;
+                height: 100%;
+                padding-left: 96px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                padding-bottom: 62px;
+
+                .numb {
+                    position: relative;
+                    left: -15px;
+
+                    p {
+                        margin: 0;
+                        line-height: 1;
+                    }
+
+                    span {
+                        font-weight: 900;
+                        font-size: 200px;
+                        color: @darkBlue;
+                        margin: 0;                        
+                        letter-spacing: -17px;
+
+                        &.mobile {
+                            font-size: 27px;
+                            font-weight: 900;
+                            letter-spacing: 0;
+                            color: @white;
+                            display: none;
+                            position: absolute;
+                            top: 35px;
+                            left: calc(100% - 15px);
+                        }
+                    }
+
+                    svg {
+                        position: absolute;
+                        top: 35px;
+                        left: calc(100% - 23px);
+                        letter-spacing: 12px;
+
+                        .stroked {
+                            font-size: 50px;
+                            font-weight: 700;
+                            stroke: @white;
+                            stroke-width: 15;
+                            fill: transparent;
+                            filter: drop-shadow(0 7px 5px rgba(0,0,0,.3));
+                        }
+
+                        .text {
+                            font-size: 50px;
+                            font-weight: 700;
+                            fill: @lightBlue;
+                        }
+
+                    }
+                }
+
+                h2 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: @white;
+                    margin: 0;
+                    max-width: 300px;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+
+            &:before {
+                content: '';
+                font-family: none;
+                background-image: url('../img/icons/arrow-slider.png');
+                background-size: 10px 16px;
+                background-position: 47% 50%;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                display: block;
+                border: 1px solid rgba(255,255,255,0.5);
+                border-radius: 100px;
+            }
+        }
+
+        .slick-next {
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+            
+
+            &:before {
+                transform: rotate(180deg);
+                content: '';
+                font-family: none;
+                background-image: url('../img/icons/arrow-slider.png');
+                background-size: 10px 16px;
+                background-position: 47% 50%;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                display: block;
+                border: 1px solid rgba(255,255,255,0.5);
+                border-radius: 100px;
+            }
+        }
+
+        .slick-dots {
+            bottom: 20px;
+            width: 100%;
+            padding-right: 52px;
+            text-align: right;
+            pointer-events: none;
+
+            li {
+                width: 7px;
+                height: 7px;
+                margin: 0 4px;
+                pointer-events: all;
+
+                button {
+                    width: 7px;
+                    height: 7px;
+                    padding: 0;
+                    background-color: #8fc2e6;
+                    border-radius: 100px;
+
+                    &:before {
+                        font-family: none;
+                        color: transparent;
+                        opacity: 1;
+                        top: 0;
+                        left: -3px;
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 13px;
+                        height: 13px;
+                        border: 1px solid #8fc2e6;
+                        border-radius: 100px;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: @white;
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .intro {
+        .slider {
+            &__item {
+                height: 350px;
+                .content {
+                    width: 100%;
+                    max-width: 600px;
+                    padding-bottom: 40px;
+                    padding-left: 70px;
+
+                    .numb {    
+                        span {
+                            font-size: 160px;  
+                        }
+    
+                        svg {
+                            top: 0;
+    
+                            .stroked {
+                                font-size: 45px;
+                            }
+    
+                            .text {
+                                font-size: 45px;
+                            }
+                        }
+                    }
+
+                    h2 {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .slick-prev {
+                left: 15px;
+            }
+
+            .slick-next {
+                right: 15px;
+            }
+
+            .slick-dots {
+                padding-right: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .intro {
+        .slider { 
+            &__item {
+                height: 300px;
+
+                .content {
+                    padding-bottom: 40px;
+                    padding-left: 70px;
+
+                    .numb {    
+                        span {
+                            font-size: 120px;  
+                        }
+    
+                        svg {
+                            top: 0;
+                            left: calc(100% - 15px);
+    
+                            .stroked {
+                                font-size: 30px;
+                                stroke-width: 10;
+                            }
+    
+                            .text {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+
+                    h2 {
+                        font-size: 20px;
+                    }
+                }
+            }            
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        .slider { 
+            &__item {
+                .content {
+                    padding-bottom: 40px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    
+                    .numb {
+                        left: 0;
+
+                        span {
+                            &.mobile {
+                                display: block;
+                            }
+                        }
+
+                        svg {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro {
+        .slider { 
+            &__item {
+                .content {
+                    .numb {
+                        span {
+                            &.mobile {
+                               font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
