@@ -1,20 +1,21 @@
 .services {
+    padding: 0 0 30px;
+    
     &__wrap {
         display: flex;
         flex-wrap: wrap;
         margin: 0 -15px;
-        padding-bottom: 14px;
         position: relative;
 
-        &:after {
-            position: absolute;
-            content: '';
-            bottom: 0;
-            left: 15px;
-            width: calc(100% - 30px);
-            height: 1px;
-            background-color: #e9ebf0;
-        }
+        // &:after {
+        //     position: absolute;
+        //     content: '';
+        //     bottom: 0;
+        //     left: 15px;
+        //     width: calc(100% - 30px);
+        //     height: 1px;
+        //     background-color: #e9ebf0;
+        // }
     }
 
     &__item {
@@ -22,7 +23,7 @@
         width: calc((100% / 2) - 30px);
         display: flex;
         background-color: @lightBlue;
-        padding: 30px 30px 25px;
+        padding: 40px 27px 27px 40px;
 
         &:nth-of-type(1),
         &:nth-of-type(5) {
@@ -38,108 +39,22 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-        }
-
-        .category {
-            color: @white;
-            font-size: 10px;
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-bottom: 11px;
+            padding-right: 10px;
         }
 
         .name {
-            font-size: 15px;
-            font-weight: 700;
-            line-height: 1.2;
             color: @white;
-            margin: 0 0 14px;
-        }
-
-        .link {
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: @white;
-            border: 1px solid @white;
-            position: relative;
-            padding: 7px 30px 7px 10px;
-            left: -5px;
-            margin-top: auto;
-
-            &:after,
-            &:before {
-                content: '';
-                position: absolute;
-                width: 12px;
-                height: 2px;
-                background-color: @white;
-                top: 0;
-                right: 8px;
-                bottom: 0;
-                margin: auto;
-            }
-
-            &:after {
-                transform: rotate(90deg);
-            }
-        }
-
-        .icon {
-            margin-left: auto;
-
-            svg {
-                width: 110px;
-                height: 110px;
-            }
-        }
-    }
-}
-
-.services-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-    padding-bottom: 0;
-
-    &__item {
-        margin: 0 15px 30px;
-        width: calc((100% / 2) - 30px);
-        display: flex;
-        background-color: @lightBlue;
-        padding: 30px 30px 25px;
-
-        &:nth-of-type(1),
-        &:nth-of-type(5) {
-            background-color: #00abba;
-        }
-
-        &:nth-of-type(2),
-        &:nth-of-type(4) {
-            background-color: #0070ba;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-right: 30px;
-        }
-
-        .category {
-            color: @white;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-bottom: 11px;
-        }
-
-        .name {
             font-size: 25px;
             font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .descr {
+            font-size: 15px;
+            font-weight: 400;
             line-height: 1.2;
             color: @white;
-            margin: 0 0 26px;
+            margin: 0 0 34px;
         }
 
         .link {
@@ -303,33 +218,8 @@
                 padding-right: 10px;
             }
 
-            .name {
+            .descr {
                 font-size: 12px;
-            }
-
-            .icon {
-                svg {
-                    width: 90px;
-                    height: 90px;
-                }
-            }
-        }
-    }
-
-    .services-list {
-        &__item {
-            padding: 20px;
-
-            .content {
-                padding-right: 10px;
-            }
-
-            .category {
-                font-size: 10px;
-            }
-
-            .name {
-                font-size: 20px;
             }
 
             .icon {
@@ -382,21 +272,6 @@
 @media screen and (max-width: 992px) {
     .services {
         &__item {
-            .icon {
-                svg {
-                    width: 60px;
-                    height: 60px;
-                }
-            }
-        }
-    }
-
-    .services-list {
-        &__item {
-            .name {
-                font-size: 12px;
-            }
-
             .icon {
                 svg {
                     width: 60px;
@@ -464,12 +339,6 @@
     .services {
         &__item {
             width: calc((100% / 1) - 30px);
-        }
-    }
-
-    .services-list {
-        &__item {
-            width: calc(100% - 30px);
         }
     }
 }

@@ -1,0 +1,40 @@
+.numbers {
+    padding: 80px 0 20px;
+    
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: calc((100% / 6));
+
+        .icon {
+            text-align: center;
+            svg {
+                width: 90px;
+                height: 90px;
+                fill: @blue;
+            }
+        }
+
+        .text {
+            text-align: center;
+            margin-top: 13px;
+            padding: 0 10px;
+
+            .value {
+                color: @darkBlue;
+                font-size: 40px;
+                font-weight: 700;
+                margin-bottom: 14px;
+            }
+
+            p {
+                color: @darkBlue;
+                margin: 0;
+                font-size: 13px;
+            }
+        }
+    }
+}

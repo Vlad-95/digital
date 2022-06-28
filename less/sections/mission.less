@@ -1,0 +1,101 @@
+.mission {
+    background-color: #f6f6f6;
+    padding: 87px 0 33px;
+
+    .section-title {
+        margin-top: 0;
+        font-size: 31px;
+        margin-bottom: 22px;
+        color: @darkBlue;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .content {
+        width: calc(100% - 376px);
+        padding-right: 115px;
+    }
+
+    .wysiwyg {
+        p,
+        ul,
+        ol {
+            color: @darkBlue;
+        }
+
+        p {
+            line-height: 1.7;
+            margin: 16px 0 30px;
+        }
+
+        ul,
+        ol {
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            li {
+                position: relative;
+                padding-left: 31px;
+                line-height: 1.75;
+                margin-bottom: 11px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 4px;
+                    top: 11px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 100px;
+                    background-color: @darkBlue;
+                } 
+            }
+        }
+
+        ol {
+            counter-reset: item;
+
+            li {
+                counter-increment: item;
+                position: relative;
+                padding-left: 31px;
+                line-height: 1.75;
+                margin-bottom: 11px;
+
+                &:before {
+                    content: counter(item)".";
+                    position: absolute;
+                    left: 4px;
+                    top: 0px;
+                    color: @darkBlue;
+                } 
+            }
+        }
+    }
+
+    .icons {
+        width: 376px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+            width: 50%;
+            text-align: center;
+            margin-bottom: 47px;
+        }
+
+        .icon {
+            margin-bottom: 14px;
+        }
+
+        .text {
+            font-size: 15px;
+            color: @darkBlue;
+        }
+    }
+}
