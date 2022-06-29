@@ -99,86 +99,20 @@ $(document).ready(function() {
                 }
             ]
         });
-
-        $('.intro .slider .slider__item').each(function() {
-            let width = $(this).find('.numb svg .stroked')[0].getBoundingClientRect().width;
-            $(this).find('.numb svg').width(width);
-            $(this).find('.numb svg').attr('viewBox', `0 0 ${width + 10} 72`);
-        })
     }
 
     //======Главный слайдер КОНЕЦ
 
-    //=======одинаковая высота текстовых блоков========
-    if ($('.license').length) {
-        $('.license__item .name').matchHeight();
-    }
+    //политика в попапе
+    $('.js-privacy').click(function() {
+        $('body').addClass('no-scroll')
+        $('.popup#privacy').fadeIn();
+    })
 
-    if ($('.project').length) {
-        $('.project__item .name').matchHeight();
-    }    
-    //=======одинаковая высота текстовых блоков КОНЕЦ========
-
-    //=======попап в проектах=========
-    if ($('.project').length) {
-        $('.project__item').click(function () {
-            let currentProject = $(this);
-            let currentProjectColor = $(this).find('.content').css('background-color');
-            let currentImgHref = currentProject.find('.image img').attr('src');
-            let currentAnotherImgHref = currentProject.attr('data-img');
-            console.log(Boolean(currentAnotherImgHref))
-            let currentName = currentProject.find('.content .name');
-            let currentInfo = currentProject.find('.content .info');
-            let currentWysiwyg = currentProject.find('.hidden .wysiwyg');
-
-            let popup = $('.project-popup');
-            let popupContent = popup.find('.project-popup__wrap .content');
-            popup.find('.image img').attr('src', '');
-            popupContent.html('');
-            popupContent.css('background-color', currentProjectColor)
-
-            if (Boolean(currentAnotherImgHref) == false) {
-                popup.find('.image img').attr('src', currentImgHref);
-            } else {
-                popup.find('.image img').attr('src', currentAnotherImgHref);
-            }
-            
-
-            let popupContentName = currentName.clone();
-            let popupContentInfo = currentInfo.clone();
-            let popupContentWysiwyg = currentWysiwyg.clone();
-
-            popupContent.append(popupContentName);
-            popupContent.append(popupContentInfo);
-            popupContent.append(popupContentWysiwyg);
-
-            popup.fadeIn();
-
-            $('body').addClass('no-scroll');
-        })
-
-        $('.project-popup').on('click', '.close', function() {
-            $(this).closest('.project-popup').fadeOut();
-            $('body').removeClass('no-scroll');
-        })
-    }
-    //=======попап в проектах КОНЕЦ=========
-
-
-    //=======попап Консультации=========
-    if ($('.consultant').length) {
-        $('.consultant .btn').click(function () {
-            $('.consultant-popup').fadeIn();
-
-            $('body').addClass('no-scroll');
-        })
-
-        $('.consultant-popup').on('click', '.close', function() {
-            $(this).closest('.consultant-popup').fadeOut();
-            $('body').removeClass('no-scroll');
-        })
-    }
-    //=======попап Консультации КОНЕЦ=========
+    $('.popup').on('click', '.close', function() {
+        $(this).closest('.popup').fadeOut();
+        $('body').removeClass('no-scroll');
+    })
 
     //=====текст отзыва=======
     if ($('.reviews').length) {
@@ -192,23 +126,8 @@ $(document).ready(function() {
             arrows: false
         })
 
-        $('.reviews .slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            let text = $(`.slider__item[data-slick-index="${currentSlide}"]`).find('.wysiwyg').html();
-            let truncateText = truncate(text, 256);
-
-            //подменяем текст
-            if ($(`.slider__item[data-slick-index="${currentSlide}"]`).find('.js-review-toggle').hasClass('open')) {
-                $(`.slider__item[data-slick-index="${currentSlide}"]`).find('.js-review-toggle').removeClass('open');
-
-                $(`.slider__item[data-slick-index="${currentSlide}"]`).find('.content .wysiwyg').fadeOut(100);
-    
-                setTimeout(() => $(`.slider__item[data-slick-index="${currentSlide}"]`).find('.content .wysiwyg').html(truncateText), 100);
-                
-                $(`.slider__item[data-slick-index="${currentSlide}"]`).find('.content .wysiwyg').fadeIn();
-            }            
-        });
-
         $('.reviews .slider__item').each(function() {
+            let title = $(this).find('.title').text();
             let text = $(this).find('.wysiwyg').html(); 
             let truncateText = truncate(text, 256);
 
@@ -218,29 +137,21 @@ $(document).ready(function() {
 
             //клик по кнопке Читать дальше
             $(this).find('.js-review-toggle').click(function() {
-                $(this).toggleClass("open");
+                const reviewPopup = $('.popup#review');
+                const reviewPopupTitle = reviewPopup.find('.title');
+                const reviewPopupText = reviewPopup.find('.wysiwyg');
 
-                if ($(this).hasClass('open')) {
-                    $(this).closest('.content').find('.wysiwyg').fadeOut(100);
+                reviewPopupTitle.text(title);
+                reviewPopupText.html(text);
 
-                    setTimeout(() => $(this).closest('.content').find('.wysiwyg').html(text), 100);
-                    
-                    $(this).closest('.content').find('.wysiwyg').fadeIn();
-
-                    //$(this).text('Скрыть')
-                } else {
-                    $(this).closest('.content').find('.wysiwyg').fadeOut(100);
-
-                    setTimeout(() => $(this).closest('.content').find('.wysiwyg').html(truncateText), 100);
-                    
-                    $(this).closest('.content').find('.wysiwyg').fadeIn();
-
-                    //$(this).text('Читать дальше')
-                }
+                $('body').addClass('no-scroll')
+                $('.popup#review').fadeIn();
             })
-        })
+        })        
 
-        
+        if ($(window).width() <= 768) {
+            $('.reviews .slider__item .content .wysiwyg').matchHeight();
+        }
     }
     //======текст отзыва КОНЕЦ
 
@@ -271,40 +182,4 @@ $(document).ready(function() {
         })
     }
     //=======всплывашка городов в блок Свяжитесь с нами КОНЕЦ======
-
-    //===========карта=================
-    if ($('.map').length) {
-
-        //наведение по элементам списка
-        $('.list .list__item').each(function() {
-            let currentItem = $(this);
-
-            currentItem.hover(
-                function() {
-                let dataCity = $(this).attr("data-city");                
-                $('.map .image circle[data-city='+ dataCity +']').addClass('hover');
-                }, function () {
-                    let dataCity = $(this).attr("data-city");
-                    $('.map .image circle[data-city='+ dataCity +']').removeClass('hover');
-                }
-            );
-        })
-
-        //наведение по точкам карты
-        $('.map .image circle[data-city]').each(function () {
-            $(this).hover(
-                function() {
-                    let dataCity = $(this).attr("data-city");
-                    $('.map .image circle[data-city='+ dataCity +']').addClass('hover');
-                    $('.map .list .list__item[data-city='+ dataCity +']').addClass('hover');
-
-                }, function() {
-                    let dataCity = $(this).attr("data-city");
-                    $('.map .image circle[data-city='+ dataCity +']').removeClass('hover');
-                    $('.map .list .list__item[data-city='+ dataCity +']').removeClass('hover');
-                }
-            )
-        })
-    }
-    //===========карта КОНЕЦ============
 });

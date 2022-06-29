@@ -38,3 +38,39 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .numbers {
+        padding: 40px 0 20px;
+
+        &__item {
+            .text {
+                .value {
+                    font-size: 30px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .numbers {
+        &__item {
+            width: calc(100% / 3);
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .numbers {
+        &__item {
+            width: calc(100% / 2);
+            margin-bottom: 20px;
+        }
+    }
+}

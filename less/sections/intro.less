@@ -1,20 +1,20 @@
 .intro {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    height: 390px;
+    overflow: hidden;
+
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-width: 1400px;
+        transform: translateY(-50%);
+    }
 
     &__wrap {
         position: relative;
-    }
-
-    .chat-bots {
-        position: absolute;
-        right: 20px;
-        top: 19px;
-        display: flex;
-        z-index: 2;
-
-        &__item {
-            margin-left: 10px;
-        }
     }
 
     .slider {
@@ -37,79 +37,27 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 50%;
                 height: 100%;
-                padding-left: 96px;
+                padding: 10px 0;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-end;
-                padding-bottom: 62px;
+                justify-content: center;
 
-                .numb {
-                    position: relative;
-                    left: -15px;
-
-                    p {
-                        margin: 0;
-                        line-height: 1;
-                    }
-
-                    span {
-                        font-weight: 900;
-                        font-size: 200px;
-                        color: @darkBlue;
-                        margin: 0;                        
-                        letter-spacing: -17px;
-
-                        &.mobile {
-                            font-size: 27px;
-                            font-weight: 900;
-                            letter-spacing: 0;
-                            color: @white;
-                            display: none;
-                            position: absolute;
-                            top: 35px;
-                            left: calc(100% - 15px);
-                        }
-                    }
-
-                    svg {
-                        position: absolute;
-                        top: 35px;
-                        left: calc(100% - 23px);
-                        letter-spacing: 12px;
-
-                        .stroked {
-                            font-size: 50px;
-                            font-weight: 700;
-                            stroke: @white;
-                            stroke-width: 15;
-                            fill: transparent;
-                            filter: drop-shadow(0 7px 5px rgba(0,0,0,.3));
-                        }
-
-                        .text {
-                            font-size: 50px;
-                            font-weight: 700;
-                            fill: @lightBlue;
-                        }
-
-                    }
-                }
+                
 
                 h2 {
-                    font-size: 24px;
+                    font-size: 50px;
                     font-weight: 700;
                     color: @white;
                     margin: 0;
-                    max-width: 300px;
+                    max-width: 580px;
                 }
             }
         }
 
         .slick-prev {
-            left: 30px;
+            left: -89px;
             width: 40px;
             height: 40px;
             z-index: 2;
@@ -130,7 +78,7 @@
         }
 
         .slick-next {
-            right: 30px;
+            right: -89px;
             width: 40px;
             height: 40px;
             z-index: 2;
@@ -203,51 +151,44 @@
     }
 }
 
+
+@media screen and (max-width: 1400px) {
+    .intro {
+        .slider {
+            .slick-prev {
+                top: auto;
+                bottom: 0;
+                right: 50px;
+                left: auto;
+            }
+
+            .slick-next {
+                top: auto;
+                bottom: 0;
+                right: 0;
+                left: auto;
+            }
+
+            .slick-dots {
+                bottom: 34px;
+                padding-right: 120px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .intro {
+        height: 350px;
+
         .slider {
             &__item {
                 height: 350px;
                 .content {
-                    width: 100%;
-                    max-width: 600px;
-                    padding-bottom: 40px;
-                    padding-left: 70px;
-
-                    .numb {    
-                        span {
-                            font-size: 160px;  
-                        }
-    
-                        svg {
-                            top: 0;
-    
-                            .stroked {
-                                font-size: 45px;
-                            }
-    
-                            .text {
-                                font-size: 45px;
-                            }
-                        }
-                    }
-
                     h2 {
-                        font-size: 22px;
+                        font-size: 30px;
                     }
                 }
-            }
-
-            .slick-prev {
-                left: 15px;
-            }
-
-            .slick-next {
-                right: 15px;
-            }
-
-            .slick-dots {
-                padding-right: 15px;
             }
         }
     }
@@ -255,38 +196,15 @@
 
 @media screen and (max-width: 992px) {
     .intro {
+        height: 300px;
+
+        video {
+            min-width: 1200px;
+        }
+
         .slider { 
             &__item {
                 height: 300px;
-
-                .content {
-                    padding-bottom: 40px;
-                    padding-left: 70px;
-
-                    .numb {    
-                        span {
-                            font-size: 120px;  
-                        }
-    
-                        svg {
-                            top: 0;
-                            left: calc(100% - 15px);
-    
-                            .stroked {
-                                font-size: 30px;
-                                stroke-width: 10;
-                            }
-    
-                            .text {
-                                font-size: 30px;
-                            }
-                        }
-                    }
-
-                    h2 {
-                        font-size: 20px;
-                    }
-                }
             }            
         }
     }
@@ -295,26 +213,8 @@
 @media screen and (max-width: 768px) {
     .intro {
         .slider { 
-            &__item {
-                .content {
-                    padding-bottom: 40px;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    
-                    .numb {
-                        left: 0;
-
-                        span {
-                            &.mobile {
-                                display: block;
-                            }
-                        }
-
-                        svg {
-                            display: none;
-                        }
-                    }
-                }
+            .slick-dots {
+                padding-right: 0;
             }
         }
     }
@@ -325,13 +225,7 @@
         .slider { 
             &__item {
                 .content {
-                    .numb {
-                        span {
-                            &.mobile {
-                               font-size: 20px;
-                            }
-                        }
-                    }
+                    
                 }
             }
         }

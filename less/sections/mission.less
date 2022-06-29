@@ -99,3 +99,79 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .mission {
+        padding: 40px 0 20px;
+
+        .section-title {
+            font-size: 20px;
+        }
+
+        .content {
+            padding-right: 70px;
+        }
+
+        .wysiwyg {
+            p,
+            ul,
+            ol {
+                font-size: 12px;
+            }
+
+            ul {
+                li {
+                    padding-left: 20px;
+
+                    &:before {
+                        width: 4px;
+                        height: 4px;
+                        top: 8px;
+                    }
+                }
+            }
+        }
+
+        .icons {
+            .text {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mission {
+        .content {
+            width: 100%;
+            order: 2;
+            padding: 0;
+        }
+
+        .icons {
+            width: 100%;
+            order: 1;
+
+            .item {
+                width: calc(100% / 5);
+                margin-bottom: 20px;
+            }
+
+            .icon {
+                img {
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mission {
+        .icons {
+            .item {
+                width: calc(100% / 2);
+            }
+        }
+    }
+}
