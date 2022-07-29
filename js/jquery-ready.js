@@ -128,11 +128,13 @@ $(document).ready(function() {
 
         $('.reviews .slider__item').each(function() {
             let title = $(this).find('.title').text();
-            let text = $(this).find('.wysiwyg').html(); 
-            let truncateText = truncate(text, 256);
+            let descr = $(this).find('.wysiwyg.descr').html(); 
+            let full = $(this).find('.wysiwyg.full').html();
+            let truncateText = truncate(descr, 256);
+            console.log(full)
 
             //подменяем текст
-            $(this).find('.wysiwyg').html(truncateText)
+            $(this).find('.wysiwyg.descr').html(truncateText)
             
 
             //клик по кнопке Читать дальше
@@ -142,7 +144,7 @@ $(document).ready(function() {
                 const reviewPopupText = reviewPopup.find('.wysiwyg');
 
                 reviewPopupTitle.text(title);
-                reviewPopupText.html(text);
+                reviewPopupText.html(full);
 
                 $('body').addClass('no-scroll')
                 $('.popup#review').fadeIn();
