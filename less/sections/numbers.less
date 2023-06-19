@@ -1,5 +1,6 @@
 .numbers {
-    padding: 80px 0 20px;
+    padding: 68px 0 93px;
+    border-bottom: 1px solid #e9ebf0;
     
     &__wrap {
         display: flex;
@@ -7,16 +8,7 @@
     }
 
     &__item {
-        width: calc((100% / 6));
-
-        .icon {
-            text-align: center;
-            svg {
-                width: 90px;
-                height: 90px;
-                fill: @blue;
-            }
-        }
+        width: calc((100% / 5));
 
         .text {
             text-align: center;
@@ -25,15 +17,23 @@
 
             .value {
                 color: @darkBlue;
-                font-size: 40px;
-                font-weight: 700;
-                margin-bottom: 14px;
+                font-size: 100px;
+                margin-bottom: 8px;
+                font-family: @PennStat;
+
+                sub {
+                    font-size: 30px;
+                    font-family: @PFBeau;
+                    font-weight: 700;
+                    bottom: 0em;
+                }
             }
 
             p {
                 color: @darkBlue;
                 margin: 0;
-                font-size: 13px;
+                font-size: 16px;
+                font-weight: 700;
             }
         }
     }
@@ -41,16 +41,30 @@
 
 @media screen and (max-width: 1200px) {
     .numbers {
-        padding: 40px 0 20px;
+        padding: 50px 0 80px;
 
         &__item {
             .text {
                 .value {
-                    font-size: 30px;
+                    font-size: 75px;
                 }
 
                 p {
                     font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .numbers {
+        padding: 40px 0;
+
+        &__item {
+            .text {
+                .value {
+                    font-size: 50px;
                 }
             }
         }
@@ -70,7 +84,6 @@
     .numbers {
         &__item {
             width: calc(100% / 2);
-            margin-bottom: 20px;
         }
     }
 }

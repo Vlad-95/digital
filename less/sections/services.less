@@ -1,72 +1,102 @@
 .services {
-    padding: 0 0 30px;
+    padding: 89px 0 110px;
+    border-bottom: 1px solid #e9ebf0;
     
-    &__wrap {
+    &__item {        
         display: flex;
-        flex-wrap: wrap;
-        margin: 0 -15px;
-        position: relative;
 
-        // &:after {
-        //     position: absolute;
-        //     content: '';
-        //     bottom: 0;
-        //     left: 15px;
-        //     width: calc(100% - 30px);
-        //     height: 1px;
-        //     background-color: #e9ebf0;
-        // }
-    }
-
-    &__item {
-        margin: 0 15px 30px;
-        width: calc((100% / 2) - 30px);
-        display: flex;
-        background-color: @lightBlue;
-        padding: 40px 27px 27px 40px;
-
-        &:nth-of-type(1),
-        &:nth-of-type(5) {
-            background-color: #00abba;
+        &:not(:last-child) {
+            margin-bottom: 70px;
         }
 
-        &:nth-of-type(2),
-        &:nth-of-type(4) {
-            background-color: #0070ba;
+        &:nth-child(odd) {
+            .image {
+                order: 1;
+            }
+
+            .content {
+                order: 2;
+                padding-left: 80px;
+                padding-right: 0;
+            }
+        }
+
+        .image {
+            width: 550px;
+            height: 550px;
+            overflow: hidden;
+            border-radius: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                object-fit: cover;
+            }
         }
 
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-right: 10px;
+            padding-right: 80px;
+            padding-top: 49px;
+            width: calc(100% - 550px);
         }
 
         .name {
-            color: @white;
-            font-size: 25px;
-            font-weight: 700;
-            margin-bottom: 24px;
+            color: @blue_sec;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 28px;
         }
 
         .descr {
-            font-size: 15px;
+            font-size: 25px;
             font-weight: 400;
             line-height: 1.2;
-            color: @white;
-            margin: 0 0 34px;
+            color: @blue_sec;
+            margin: 0 0 49px;
+        }
+        
+        .list {
+            color: @blue_sec;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 17px;
+            margin-bottom: 41px;
+            left: 4px;
+
+            li {
+                position: relative;
+                line-height: 1.5;
+                padding-left: 49px;
+                margin-bottom: 13px;
+
+                &:before {
+                    position: absolute;
+                    left: 3px;
+                    top: 2px;
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 100px;
+                    background: @blue_sec;
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 19 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 13C6.8684 13.0008 6.73793 12.9755 6.6161 12.9258C6.49426 12.876 6.38344 12.8027 6.29 12.71L1.29 7.71C1.19676 7.61676 1.1228 7.50607 1.07234 7.38425C1.02188 7.26243 0.995911 7.13186 0.995911 7C0.995911 6.7337 1.1017 6.47831 1.29 6.29C1.47831 6.1017 1.7337 5.99591 2 5.99591C2.2663 5.99591 2.5217 6.1017 2.71 6.29L7 10.59L16.29 1.29C16.4783 1.1017 16.7337 0.995911 17 0.995911C17.2663 0.995911 17.5217 1.1017 17.71 1.29C17.8983 1.47831 18.0041 1.7337 18.0041 2C18.0041 2.2663 17.8983 2.5217 17.71 2.71L7.71 12.71C7.61656 12.8027 7.50575 12.876 7.38391 12.9258C7.26207 12.9755 7.13161 13.0008 7 13Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
         }
 
         .link {
             font-size: 10px;
             font-weight: 800;
             text-transform: uppercase;
-            color: @white;
-            border: 1px solid @white;
+            color: @blue_sec;
+            border: 1px solid #7fb4d9;
+            border-radius: 100px;
             position: relative;
             padding: 7px 30px 7px 10px;
-            left: -5px;
-            margin-top: auto;
+            display: inline-block;
 
             &:after,
             &:before {
@@ -74,7 +104,7 @@
                 position: absolute;
                 width: 12px;
                 height: 2px;
-                background-color: @white;
+                background-color: @blue_sec;
                 top: 0;
                 right: 8px;
                 bottom: 0;
@@ -100,14 +130,49 @@
 @media screen and (max-width: 1200px) {
     .services {
         &__item {
-            padding: 20px;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            &:nth-child(odd) {
+                .content {
+                    padding-left: 30px;
+                    padding-right: 0;
+                }
+            }
+
+            .image {
+                width: 400px;
+                height: 400px;
+            }
 
             .content {
-                padding-right: 10px;
+                width: calc(100% - 400px);
+                padding-top: 30px;
+                padding-right: 30px;
+            }
+
+            .name {
+                font-size: 25px;
+                margin-bottom: 15px;
             }
 
             .descr {
-                font-size: 12px;
+                font-size: 17px;
+                margin: 0 0 30px;
+            }
+
+            .list {
+                font-size: 15px;
+
+                li {
+                    padding-left: 30px;
+
+                    &:before {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
 
             .icon {
@@ -122,6 +187,7 @@
 
 @media screen and (max-width: 992px) {
     .services {
+        padding: 50px 0;
         &__item {
             .icon {
                 svg {
@@ -136,7 +202,54 @@
 @media screen and (max-width: 768px) {
     .services {
         &__item {
-            width: calc((100% / 2) - 30px);
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .image {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .content {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                padding: 30px!important;
+                background-color: fade(@blue_sec, 50%);
+            }
+
+            .name {
+                color: @white;
+            }
+
+            .descr {
+                color: @white;
+            }
+
+            .list {
+                color: @white;
+                li {
+                    &:before {
+                        background: @white;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 19 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 13C6.8684 13.0008 6.73793 12.9755 6.6161 12.9258C6.49426 12.876 6.38344 12.8027 6.29 12.71L1.29 7.71C1.19676 7.61676 1.1228 7.50607 1.07234 7.38425C1.02188 7.26243 0.995911 7.13186 0.995911 7C0.995911 6.7337 1.1017 6.47831 1.29 6.29C1.47831 6.1017 1.7337 5.99591 2 5.99591C2.2663 5.99591 2.5217 6.1017 2.71 6.29L7 10.59L16.29 1.29C16.4783 1.1017 16.7337 0.995911 17 0.995911C17.2663 0.995911 17.5217 1.1017 17.71 1.29C17.8983 1.47831 18.0041 1.7337 18.0041 2C18.0041 2.2663 17.8983 2.5217 17.71 2.71L7.71 12.71C7.61656 12.8027 7.50575 12.876 7.38391 12.9258C7.26207 12.9755 7.13161 13.0008 7 13Z' fill='%230069b4'/%3E%3C/svg%3E%0A");
+                    }
+                }
+            }
+
+            .link {
+                color: @white;
+
+                &:before,
+                &:after {
+                    background-color: @white;
+                }
+            }
         }
     }
 }
@@ -144,7 +257,7 @@
 @media screen and (max-width: 576px) {
     .services {
         &__item {
-            width: calc((100% / 1) - 30px);
+            // width: calc((100% / 1) - 30px);
         }
     }
 }

@@ -100,23 +100,7 @@ $(document).ready(function () {
   }
   //=======Все сайты КОНЕЦ=====
 
-  //======Главный слайдер==========
-  if ($('.intro .slider').length) {
-    $('.intro .slider').slick({
-      arrows: true,
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 769,
-          settings: {
-            arrows: false,
-          },
-        },
-      ],
-    });
-  }
 
-  //======Главный слайдер КОНЕЦ
 
   //политика в попапе
   $('.js-privacy').click(function () {
@@ -205,4 +189,36 @@ $(document).ready(function () {
     });
   }
   //=======всплывашка городов в блок Свяжитесь с нами КОНЕЦ======
+
+  // ========Слайдер фоток на главной
+  if ($('.photos').length) {
+    $('.photos .slider').slick({
+      slidesToShow: 5,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      arrows: false,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
+  }
+  // ========Слайдер фоток на главной КОНЕЦ
 });

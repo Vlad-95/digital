@@ -1,5 +1,5 @@
 .feedback {
-    margin-top: 30px;
+    margin-top: 111px;
 
     &__wrap {
         display: flex;
@@ -11,10 +11,11 @@
     }
 
     .sidebar {
-        background-color: #00abba;
+        background-color: @darkBlue;
         width: 370px;
         margin-right: 30px;
         padding: 40px;
+        border-radius: 10px;
     }
 
     .city {
@@ -102,6 +103,7 @@
     background-color: @lightBlue;
     width: calc(100% - 400px);
     padding: 42px 50px;
+    border-radius: 10px;
 
     &__row {
         margin: 0 -15px;
@@ -267,6 +269,7 @@
 
 @media screen and (max-width: 992px) {
     .feedback {
+        margin-top: 50px;
 
         .sidebar {
             width: 250px;    
