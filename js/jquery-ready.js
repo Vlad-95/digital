@@ -100,6 +100,39 @@ $(document).ready(function () {
   }
   //=======Все сайты КОНЕЦ=====
 
+  // Анимация чисел
+  if ($('.numbers').length) {
+    let animFlag = true;
+    function animateNum() {
+      const time = 5000;
+      const step = 1;
+      $('.numbers__item').each(function () {
+        let startVal = 0;
+        const targetVal = $(this).find('.value').attr('data-value');
+        let t = Math.round(time / (targetVal / step));
+
+        let interval = setInterval(() => {
+          startVal = startVal + step;
+          if (startVal == targetVal) {
+            clearInterval(interval);
+          }
+
+          $(this).find('.value span').text(startVal);
+        }, t);
+      });
+    }
+
+    $(window).scroll(function () {
+      let blockOffset = $('.numbers').offset().top - $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (blockOffset < (windowHeight / 3) * 2 && animFlag) {
+        animateNum();
+        animFlag = false;
+      }
+    });
+  }
+
   //политика в попапе
   $('.js-privacy').click(function () {
     $('body').addClass('no-scroll');
