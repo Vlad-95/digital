@@ -100,8 +100,6 @@ $(document).ready(function () {
   }
   //=======Все сайты КОНЕЦ=====
 
-
-
   //политика в попапе
   $('.js-privacy').click(function () {
     $('body').addClass('no-scroll');
@@ -202,23 +200,34 @@ $(document).ready(function () {
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 4
-          }
+            slidesToShow: 4,
+          },
         },
         {
           breakpoint: 992,
           settings: {
-            slidesToShow: 3
-          }
+            slidesToShow: 3,
+          },
         },
         {
           breakpoint: 576,
           settings: {
-            slidesToShow: 2
-          }
-        }
-      ]
+            slidesToShow: 2,
+          },
+        },
+      ],
     });
   }
   // ========Слайдер фоток на главной КОНЕЦ
+
+  // слайдре на странице продукта
+  if ($('.product').length) {
+    $('.product .slider').slick({
+      dots: false,
+      prevArrow:
+        '<button class="slick-arrow prev"><img src="img/icons/arrow-big.png"/></button>',
+      nextArrow:
+        '<button class="slick-arrow next"><img src="img/icons/arrow-big.png"/></button>',
+    });
+  }
 });
