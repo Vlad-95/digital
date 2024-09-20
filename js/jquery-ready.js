@@ -122,15 +122,17 @@ $(document).ready(function () {
       });
     }
 
-    $(window).scroll(function () {
-      let blockOffset = $('.numbers').offset().top - $(window).scrollTop();
-      const windowHeight = $(window).height();
+    $(window)
+      .scroll(function () {
+        let blockOffset = $('.numbers').offset().top - $(window).scrollTop();
+        const windowHeight = $(window).height();
 
-      if (blockOffset < (windowHeight / 3) * 2 && animFlag) {
-        animateNum();
-        animFlag = false;
-      }
-    });
+        if (blockOffset < windowHeight && animFlag) {
+          animateNum();
+          animFlag = false;
+        }
+      })
+      .scroll();
   }
 
   //политика в попапе
@@ -258,9 +260,9 @@ $(document).ready(function () {
     $('.product .slider').slick({
       dots: false,
       prevArrow:
-        '<button class="slick-arrow prev"><img src="img/icons/arrow-big.png"/></button>',
+        '<button class="slick-arrow prev"><img src="/img/icons/arrow-big.png"/></button>',
       nextArrow:
-        '<button class="slick-arrow next"><img src="img/icons/arrow-big.png"/></button>',
+        '<button class="slick-arrow next"><img src="/img/icons/arrow-big.png"/></button>',
     });
   }
 });
