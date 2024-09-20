@@ -5,15 +5,13 @@
     <title>Цифровые решения</title>
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+      content="width=device-width, initial-scale=1.0" />
 
     <link
       href="css/style.css"
       rel="stylesheet"
       type="text/css"
-      media="all"
-    />
+      media="all" />
   </head>
   <body>
     <main>
@@ -22,22 +20,25 @@
           <div class="product__head">
             <a
               href="javascript:;"
-              class="close"
-            ></a>
+              class="close"></a>
           </div>
           <div class="product__intro">
             <div class="content">
-              <h1>Поддержка 1C: УПП</h1>
-              <p>Сервис поддержки Внешняя услуга</p>
+              <h1>Поддержка<span>1C:УПП</span></h1>
+              <p>
+                Сервис поддержки<br />
+                Внешняя услуга
+              </p>
             </div>
             <div class="image">
               <svg>
-                <use xlink:href="img/icons/sprite.svg#intro_prod"></use>
+                <use xlink:href="img/icons/sprite.svg#intro_prod-upp"></use>
               </svg>
             </div>
           </div>
           <div class="product__content">
-            <div class="wysiwyg">
+            <!-- На этой странице большие заголовки и поэтому добавляем класс wysiwyg_big-h2 -->
+            <div class="wysiwyg wysiwyg_big-h2">
               <p>
                 Фирма 1С в своем письме известила о прекращении поддержки 1С:УПП
                 с 01.01.27 года. Правления компаний, Советы директоров,
@@ -48,8 +49,8 @@
                 1С:УПП и готовы поделиться ей с вами.
               </p>
 
-              <h2>Возможные варианты решения проблемы:</h2>
               <div class="offers">
+                <h2>Возможные варианты решения проблемы:</h2>
                 <div class="offers__wrap">
                   <div class="item">
                     <div class="item__head">Переход<br />на 1С:ERP</div>
@@ -66,7 +67,8 @@
                     </div>
                   </div>
 
-                  <div class="item">
+                  <!-- присваивается класс item_blue если элемент необходимо выделить -->
+                  <div class="item item_blue">
                     <div class="item__head">Решение<br />от РВК.Диджитал</div>
                     <div class="item__content">
                       <div class="label">Цена вопроса:</div>
@@ -74,7 +76,7 @@
                         <span class="big">120</span>
                         <span>тыс.<br />руб.</span>
                       </div>
-                      <div class="caption">120 - 240 000 &#8381;/год**</div>
+                      <div class="caption">120 000 - 240 000 &#8381;/год**</div>
                     </div>
                     <div class="item__foot">
                       <div class="label">Дополнительные сотрудники:</div>
@@ -132,37 +134,60 @@
                 </li>
               </ul>
 
-              <h2>Что вы получаете</h2>
-
               <div class="advantages">
+                <h2>Что вы получаете?</h2>
                 <div class="advantages__wrap">
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages1.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Существенная экономия</div>
                   </div>
 
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages2.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Бесшовные бизнес-процессы</div>
                   </div>
 
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages3.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Проверенный временем продукт</div>
                   </div>
 
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages4.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Легкая интеграция</div>
                   </div>
 
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages5.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Душевное спокойствие</div>
                   </div>
 
                   <div class="item">
-                    <div class="item__icon"></div>
+                    <div class="item__icon">
+                      <img
+                        src="/img/advantages6.png"
+                        alt="" />
+                    </div>
                     <div class="item__text">Довольные сотрудники</div>
                   </div>
                 </div>
@@ -171,7 +196,10 @@
               <h2>Выберите ваш тариф!</h2>
               <ul>
                 <li>
-                  <span>120 000 ₽/год — Типовая конфигурация</span>
+                  <span style="font-size: 25px; font-weight: 400">
+                    120 000 ₽/год — Типовая конфигурация
+                  </span>
+                  <br />
                   В случае подписки на типовую конфигурацию клиент получает
                   типовую конфигурацию со всеми изменениями законодательства и
                   возможность обновить свою 1С:УПП самостоятельно или с помощью
@@ -179,54 +207,74 @@
                 </li>
 
                 <li>
-                  <span>240 000 ₽/год — «Под ключ»</span>
+                  <span style="font-size: 25px; font-weight: 400">
+                    240 000 ₽/год — «Под ключ»
+                  </span>
+                  <br />
                   Клиент получит решение с учетом изменений законодательства со
                   всеми своими доработками, т.е. решение под ключ.
                 </li>
               </ul>
 
-              <div class="offers">
-                <div class="offers__wrap">
+              <div class="types">
+                <div class="types__wrap">
                   <div class="item">
-                    <div class="item__head">Типовая конфигурация</div>
+                    <div class="item__head">
+                      <span>Типовая конфигурация</span>
+                    </div>
                     <div class="item__text">120 000 ₽/год</div>
                     <div class="item__foot">
-                      <a href="javascript:;">Заказать</a>
+                      <a href="#feedback">Заказать</a>
                     </div>
                   </div>
                   <div class="item">
-                    <div class="item__head">Под ключ</div>
+                    <div class="item__head"><span>Под ключ</span></div>
                     <div class="item__text">240 000 ₽/год</div>
                     <div class="item__foot">
-                      <a href="javascript:;">Заказать</a>
+                      <a href="#feedback">Заказать</a>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <h2>Остались вопросы?</h2>
+              <p>
+                Мы понимаем насколько сложно принять решение, когда речь заходит
+                о серьезных цифровых продуктах, от которых зависит работа вашего
+                предприятия. Наши менеджеры подробно расскажут о нашем
+                предложении и ответят на вопросы, несомненно, возникшие у вас.
+                Пожалуйста, обратитесь в нашу службу поддержки:
+              </p>
+              <p>
+                <strong
+                  >+7 (495) 514-02-11 | info@digital.rosvodokanal.ru |</strong
+                >
+                или заполните форму ниже.
+              </p>
             </div>
           </div>
 
-          <div class="product__feedback">
+          <div
+            class="product__feedback"
+            id="feedback">
+            <!-- На этой странице форма темно-синяя, поэтому добавляется класс form_blue-->
             <form
               action=""
-              class="form"
-            >
+              class="form form_blue">
               <h2 class="title">Задайте вопрос</h2>
               <div class="form__row">
                 <label class="form__item">
                   <p class="form__item-name">ФИО *</p>
                   <input
                     type="text"
-                    class="form__item-input"
-                  />
+                    class="form__item-input" />
                 </label>
 
                 <label class="form__item">
                   <p class="form__item-name">Телефон или e-mail *</p>
                   <input
                     type="text"
-                    class="form__item-input"
-                  />
+                    class="form__item-input" />
                 </label>
               </div>
 
@@ -235,8 +283,7 @@
                 <textarea
                   name=""
                   id=""
-                  class="form__item-textarea"
-                ></textarea>
+                  class="form__item-textarea"></textarea>
               </div>
 
               <div class="form__footer">
@@ -245,8 +292,7 @@
                     type="checkbox"
                     class="agree"
                     name=""
-                    id=""
-                  />
+                    id="" />
                   <div class="form__agree-text">
                     Я соглашаюсь на
                     <a
@@ -259,8 +305,7 @@
 
                 <button
                   class="form__submit"
-                  type="submit"
-                >
+                  type="submit">
                   Отправить
                 </button>
               </div>
@@ -275,8 +320,7 @@
 
     <div
       class="popup"
-      id="privacy"
-    >
+      id="privacy">
       <div class="popup__wrap">
         <div class="close"></div>
         <h2 class="title">Условия работы сайта</h2>
