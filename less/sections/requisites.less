@@ -1,59 +1,60 @@
 .requisites {
-    margin: 70px 0 0;
+  padding: 70px 0;
 
-    &__wrap {
-        background-color: #f6f6f6;
-        padding: 30px 52px 21px;
-        border-radius: 10px;
+  &__wrap {
+    background-color: #f6f6f6;
+    padding: 30px 52px 21px;
+    border-radius: 10px;
+  }
+
+  &__item {
+    display: flex;
+    font-size: 13px;
+    color: @blue_sec;
+    line-height: 1.5;
+    padding: 10px 0;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #e1e3e8;
     }
 
-    &__item {
-        display: flex;
-        font-size: 13px;
-        color: @blue_sec;
-        line-height: 1.5;
-        padding: 10px 0;
-
-        &:not(:last-of-type) {
-            border-bottom: 1px solid #e1e3e8;
-        }
-
-        .name {
-            width: 37%;
-            padding-right: 20px;
-        }
-
-        .value {
-            width: 63%;
-        }
+    .name {
+      width: 37%;
+      padding-right: 20px;
     }
+
+    .value {
+      width: 63%;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .requisites {
-        &__wrap {
-            padding: 40px;
-        }
+  .requisites {
+    padding: 50px 0;
+
+    &__wrap {
+      padding: 40px;
     }
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .requisites {
-        &__item {
-            font-size: 12px;
-        }
+  .requisites {
+    &__item {
+      font-size: 12px;
     }
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .requisites {
-
-        &__wrap {
-            padding: 15px;
-        }
-
-        &__item {
-            font-size: 12px;
-        }
+  .requisites {
+    &__wrap {
+      padding: 15px;
     }
+
+    &__item {
+      font-size: 12px;
+    }
+  }
 }
