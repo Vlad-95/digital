@@ -265,4 +265,13 @@ $(document).ready(function () {
         '<button class="slick-arrow next"><img src="/img/icons/arrow-big.png"/></button>',
     });
   }
+
+  // разделение имени и фамилии
+  if ($('.js-fullname').length) {
+    $('.js-fullname').each(function () {
+      let name = $(this).text().trim().split(' ');
+
+      $(this).html(`${name[0]}<br>${name[1]} ${name[2]}`);
+    });
+  }
 });
