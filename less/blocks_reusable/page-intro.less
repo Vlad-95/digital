@@ -1,0 +1,28 @@
+.page-intro {
+  background-color: @darkBlue;
+  padding: 26px 0 68px;
+  overflow: hidden;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 108px;
+    width: 264px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .page-intro {
+    padding: 25px 0 40px;
+
+    &__image {
+      display: none;
+    }
+  }
+}

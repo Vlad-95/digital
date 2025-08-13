@@ -1,0 +1,32 @@
+.breadcrumbs {
+  padding: 0;
+  margin: 0 0 29px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 14px;
+  font-weight: 300;
+
+  &__item {
+    a {
+      color: #7b9bef;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 1px;
+        background-color: #7b9bef;
+      }
+    }
+
+    span {
+      color: @white;
+    }
+  }
+}
