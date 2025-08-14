@@ -1,0 +1,73 @@
+.prizes-list {
+  padding: 80px 0;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 30px;
+  }
+
+  &__item {
+    &-image {
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 18px;
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+
+    &-caption {
+      text-align: center;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.25;
+      color: @darkBlue;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .prizes-list {
+    padding: 50px 0;
+
+    &__wrap {
+      gap: 30px 20px;
+    }
+
+    &__item {
+      &-caption {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .prizes-list {
+    &__wrap {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .prizes-list {
+    &__wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
